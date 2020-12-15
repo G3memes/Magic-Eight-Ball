@@ -1,5 +1,6 @@
 String buttonText1= "Click Me";
-String buttonText2= "Or Me";
+String buttonText2= "Click Me";
+String buttonText3= "Angry Mode";
 PFont titleFont;
 
 void text_setup() { 
@@ -21,4 +22,9 @@ void text_draw_2() {
   text_draw_pre();
   text(buttonText2, button_2_x, button_2_y, button_2_width, button_2_height);
   fill(255); 
+}
+
+void text_draw_3() {
+  text_draw_pre();
+  text(buttonText3, anger_x, anger_y, anger_width, anger_height);
 }
