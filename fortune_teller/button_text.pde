@@ -1,4 +1,4 @@
-void button_words() {
+void button_words_1() {
   fill(grey);
   textAlign(CENTER, CENTER);
   textFont(button_font, 100);
@@ -36,3 +36,5 @@ void button_words() {
   textFont(button_font, 100);
   text(button_9_text, button_9_x, button_9_y, button_width, button_height);
 }
+
+void button_words_2();
