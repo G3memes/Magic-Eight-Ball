@@ -4,9 +4,18 @@ float cir_diameter;
 //
 float button_1_x, button_1_y, button_2_x, button_2_y, button_3_x, button_3_y, button_4_x, button_4_y, button_5_x, button_5_y, button_6_x, button_6_y, button_7_x, button_7_y, button_8_x, button_8_y, button_9_x, button_9_y; 
 float button_width, button_height;
-color blue = #21D1FF, white = #FFFFFF;
+color blue = #21D1FF, white = #FFFFFF, grey= #000000;
 //
+PFont button_font;
 String button_1_text = "ONE";
+String button_2_text = "TWO";
+String button_3_text = "THREE";
+String button_4_text = "FOUR";
+String button_5_text = "FIVE";
+String button_6_text = "SIX";
+String button_7_text = "SEVEN";
+String button_8_text = "EIGHT";
+String button_9_text = "NINE";
 
 void setup() {
   fullScreen();
@@ -18,6 +27,7 @@ void draw() {
   buttons();
   lines();
   points();
+  button_words();
 }
 
 void mousePressed() {

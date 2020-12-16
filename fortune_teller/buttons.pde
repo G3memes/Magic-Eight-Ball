@@ -1,8 +1,6 @@
 void buttons() {
   fill(white);
   rect(button_1_x, button_1_y, button_width, button_height);
-  textAlign(CENTER, CENTER);
-  text(button_1_text, button_1_x, button_1_y, button_width, button_height);
   rect(button_2_x, button_2_y, button_width, button_height);
   rect(button_3_x, button_3_y, button_width, button_height);
   rect(button_4_x, button_4_y, button_width, button_height);

@@ -17,7 +17,10 @@ void population() {
   button_4_y = button_5_y = button_6_y = cir_5_y;
   button_3_x = button_6_x = button_9_x = cir_3_x;
   button_7_y = button_8_y = button_9_y = cir_9_y;
-  
+  //
   button_width = displayWidth*1/3;
   button_height = displayHeight*1/3;
+  //
+  button_font = createFont ("Arial", 55);
+  
 }
