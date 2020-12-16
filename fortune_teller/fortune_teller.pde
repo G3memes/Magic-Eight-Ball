@@ -27,7 +27,7 @@ void draw() {
   buttons();
   lines();
   points();
-  button_words();
+  button_words_1();
 }
 
 void mousePressed() {
