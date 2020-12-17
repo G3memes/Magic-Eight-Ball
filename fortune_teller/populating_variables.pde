@@ -22,5 +22,21 @@ void population() {
   button_height = displayHeight*1/3;
   //
   button_font = createFont ("Arial", 55);
-  
+  //
+  start_x = displayWidth*0;
+  start_y = displayHeight*0;
+  start_width = displayWidth;
+  start_height = displayHeight;
+  //
+  half_1_x = displayWidth*1/2;
+  half_1_y = displayHeight*0;
+  half_2_x = displayWidth*1/2;
+  half_2_y = displayHeight*2/2;
+  //
+  button_start_right_x = displayWidth*1/2;
+  button_start_right_y = displayHeight*0;
+  button_start_left_x = displayWidth*0;
+  button_start_left_y = displayHeight*0;
+  button_start_width = displayWidth*1/2;
+  button_start_height = displayHeight;
 }

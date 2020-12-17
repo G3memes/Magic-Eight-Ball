@@ -16,17 +16,26 @@ boolean button_8_pressed = false;
 boolean button_9_pressed = false;
 //
 PFont button_font;
-String button_1_text = "ONE";
-String button_2_text = "TWO";
-String button_3_text = "THREE";
-String button_4_text = "FOUR";
-String button_5_text = "FIVE";
-String button_6_text = "SIX";
-String button_7_text = "SEVEN";
-String button_8_text = "EIGHT";
-String button_9_text = "NINE";
+String button_8_text = "DETECT MOOD";
+//
+String button_2_1_text = "GREEN";
+String button_2_2_text = "BLUE";
+String button_2_3_text = "YELLOW";
+String button_2_4_text = "RED";
+String button_2_5_text = "PINK";
+String button_2_6_text = "BROWN";
+String button_2_7_text = "GRAY";
+String button_2_8_text = "ORANGE";
+String button_2_9_text = "PURPLE";
+//
+String button_1_start_text = "Magic 8-Ball";
+String button_2_start_text = "8-Ball Mood";
 //
 float digit;
+//
+float start_x, start_y, start_width, start_height;
+float half_1_x, half_1_y, half_2_x, half_2_y;
+float  button_start_right_x, button_start_right_y, button_start_left_x, button_start_left_y, button_start_width, button_start_height;
 //
 String button_1_answer_text = "NO";
 String button_2_answer_text = "FOR SURE";
@@ -40,8 +49,14 @@ String button_9_answer_text = "WHO KNOWS?";
 //
 float button_cords_x, button_cords_y;
 //
-boolean start_again = true;
-
+boolean start_again = false;
+boolean start_screen = true;
+boolean choice_1 = false;
+boolean choice_2 = false;
+boolean start_again_1 = false;
+boolean start_again_2 = false;
+boolean next = false;
+boolean next_1 = false;
 void setup() {
   fullScreen();
   population();
@@ -49,95 +64,102 @@ void setup() {
 }
 
 void draw() {
-  if (start_again == true) {}
-  buttons();
-  lines();
-  points();
-  button_words();
-  start_again = false;
-
-  if (button_1_pressed == true) {
-    answer_selector();
-    button_1_pressed = false;
+  if (start_screen == true) {
+    fill(white);
+    rect(start_x, start_y, start_width, start_height);
+    strokeWeight(2);
+    line(half_1_x, half_1_y, half_2_x, half_2_y);
+    rect(button_start_right_x, button_start_right_y, button_start_width, button_start_height);
+    rect(button_start_left_x, button_start_left_y, button_start_width, button_start_height);
+    fill(grey);
+    textAlign(CENTER, CENTER);
+    textFont(button_font, 100);
+    text(button_1_start_text, button_start_right_x, button_start_right_y, button_start_width, button_start_height);
+    //
+    textAlign(CENTER, CENTER);
+    textFont(button_font, 100);
+    text(button_2_start_text, button_start_left_x, button_start_left_y, button_start_width, button_start_height);
   }
-  if (button_2_pressed == true) {
-    answer_selector();
-    button_2_pressed = false;
+  if (start_again == true) {
+    buttons();
+    lines();
+    points();
+    if (start_again_1 == true) {
+      button_1_words();
+      start_again = false;
+      next_1 = true;
+    }
+    if (start_again_2 == true) {
+      button_2_words();
+      start_again = false;
+      next = true;
+    }
   }
-  if (button_3_pressed == true) {
-    answer_selector();
-    button_3_pressed = false;
+  if (next == true) {
+    if (button_1_pressed == true) {
+      answer_1_selector();
+      button_1_pressed = false;
+    }
+    if (button_2_pressed == true) {
+      answer_1_selector();
+      button_2_pressed = false;
+    }
+    if (button_3_pressed == true) {
+      answer_1_selector();
+      button_3_pressed = false;
+    }
+    if (button_4_pressed == true) {
+      answer_1_selector();
+      button_4_pressed = false;
+    }
+    if (button_5_pressed == true) {
+      answer_1_selector();
+      button_5_pressed = false;
+    }
+    if (button_6_pressed == true) {
+      answer_1_selector();
+      button_6_pressed = false;
+    }
+    if (button_7_pressed == true) {
+      answer_1_selector();
+      button_7_pressed = false;
+    }
+    if (button_8_pressed == true) {
+      answer_1_selector();
+      button_8_pressed = false;
+    }
+    if (button_9_pressed == true) {
+      answer_1_selector();
+      button_9_pressed = false;
+    }
   }
-  if (button_4_pressed == true) {
-    answer_selector();
-    button_4_pressed = false;
-  }
-  if (button_5_pressed == true) {
-    answer_selector();
-    button_5_pressed = false;
-  }
-  if (button_6_pressed == true) {
-    answer_selector();
-    button_6_pressed = false;
-  }
-  if (button_7_pressed == true) {
-    answer_selector();
-    button_7_pressed = false;
-  }
-  if (button_8_pressed == true) {
-    answer_selector();
-    button_8_pressed = false;
-  }
-  if (button_9_pressed == true) {
-    answer_selector();
-    button_9_pressed = false;
+  if (next_1 == true) {
+    if (button_8_pressed == true) {
+      answer_1_selector();
+      button_8_pressed = false;
+    }
   }
 }
 
 void mousePressed() {
-  if (mouseX > button_1_x && mouseX < button_1_x + button_width && mouseY > button_1_y && mouseY < button_1_y + button_height) {
-    button_1_pressed = true;
-    button_cords_x = button_1_x;
-    button_cords_y = button_1_y;
+  if (start_screen == true) {
+    if (mouseX > button_start_left_x && mouseX < button_start_left_x + button_start_width && mouseY > button_start_left_y && mouseY < button_start_left_y + button_start_height) {
+      choice_1 = true;
+      start_screen = false;
+      start_again = true;
+      start_again_1 = true;
+    }
+    if (mouseX > button_start_right_x && mouseX < button_start_right_x + button_start_width && mouseY > button_start_right_y && mouseY < button_start_right_y + button_start_height) {
+      choice_2 = true;
+      start_screen = false;
+      start_again = true;
+      start_again_2 = true;
+    }
   }
-  if (mouseX > button_2_x && mouseX < button_2_x + button_width && mouseY > button_2_y && mouseY < button_2_y + button_height) {
-    button_2_pressed = true;
-    button_cords_x = button_2_x;
-    button_cords_y = button_2_y;
+  if (choice_1 == true && choice_2 == false && next == true) {
+    choice_1_mouse();
   }
-  if (mouseX > button_3_x && mouseX < button_3_x + button_width && mouseY > button_3_y && mouseY < button_3_y + button_height) {
-    button_3_pressed = true;
-    button_cords_x = button_3_x;
-    button_cords_y = button_3_y;
-  }
-  if (mouseX > button_4_x && mouseX < button_4_x + button_width && mouseY > button_4_y && mouseY < button_4_y + button_height) {
-    button_4_pressed = true;
-    button_cords_x = button_4_x;
-    button_cords_y = button_4_y;
-  }
-  if (mouseX > button_5_x && mouseX < button_5_x + button_width && mouseY > button_5_y && mouseY < button_5_y + button_height) {
-    button_5_pressed = true;
-    button_cords_x = button_5_x;
-    button_cords_y = button_5_y;
-  }
-  if (mouseX > button_6_x && mouseX < button_6_x + button_width && mouseY > button_6_y && mouseY < button_6_y + button_height) {
-    button_6_pressed = true;
-    button_cords_x = button_6_x;
-    button_cords_y = button_6_y;
-  }
-  if (mouseX > button_7_x && mouseX < button_7_x + button_width && mouseY > button_7_y && mouseY < button_7_y + button_height) {
-    button_7_pressed = true;
-    button_cords_x = button_7_x;
-    button_cords_y = button_7_y;
-  }
-  if (mouseX > button_8_x && mouseX < button_8_x + button_width && mouseY > button_8_y && mouseY < button_8_y + button_height) {
-    button_8_pressed = true;
-    button_cords_x = button_8_x;
-    button_cords_y = button_8_y;
-  }
-  if (mouseX > button_9_x && mouseX < button_9_x + button_width && mouseY > button_9_y && mouseY < button_9_y + button_height) {
-    button_9_pressed = true;
-    button_cords_x = button_9_x;
-    button_cords_y = button_9_y;
+  if (choice_2 == true && choice_1 == false && next == true) {
+    choice_2_mouse();
   }
 }
