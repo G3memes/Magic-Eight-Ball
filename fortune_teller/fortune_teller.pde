@@ -70,6 +70,7 @@ float image1WidthRatio;
 float image1HeightRatio;
 float image2WidthRatio;
 float image2HeightRatio;
+//
 void setup() {
   fullScreen();
   population();
