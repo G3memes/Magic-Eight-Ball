@@ -37,4 +37,5 @@ void button_words_1() {
   text(button_9_text, button_9_x, button_9_y, button_width, button_height);
 }
 
-void button_words_2();
+void button_words_2() {
+}
