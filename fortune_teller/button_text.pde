@@ -1,4 +1,4 @@
-void button_words_1() {
+void button_words() {
   fill(grey);
   textAlign(CENTER, CENTER);
   textFont(button_font, 100);
@@ -23,19 +23,16 @@ void button_words_1() {
   textAlign(CENTER, CENTER);
   textFont(button_font, 100);
   text(button_6_text, button_6_x, button_6_y, button_width, button_height);
-  
+  //
   textAlign(CENTER, CENTER);
   textFont(button_font, 100);
   text(button_7_text, button_7_x, button_7_y, button_width, button_height);
-  
+  //
   textAlign(CENTER, CENTER);
   textFont(button_font, 100);
   text(button_8_text, button_8_x, button_8_y, button_width, button_height);
-  
+  //
   textAlign(CENTER, CENTER);
   textFont(button_font, 100);
   text(button_9_text, button_9_x, button_9_y, button_width, button_height);
-}
-
-void button_words_2() {
 }

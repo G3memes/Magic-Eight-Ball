@@ -26,15 +26,21 @@ String button_7_text = "SEVEN";
 String button_8_text = "EIGHT";
 String button_9_text = "NINE";
 //
+float digit;
+//
 String button_1_answer_text = "NO";
-String button_2_answer_text = "NO";
-String button_3_answer_text = "NO";
-String button_4_answer_text = "NO";
-String button_5_answer_text = "NO";
-String button_6_answer_text = "NO";
-String button_7_answer_text = "NO";
-String button_8_answer_text = "NO";
-String button_9_answer_text = "NO";
+String button_2_answer_text = "FOR SURE";
+String button_3_answer_text = "MY SOURCES SAY NO";
+String button_4_answer_text = "KIND OF";
+String button_5_answer_text = "DEFINITELY NOT";
+String button_6_answer_text = "MAYBE, MAYBE NOT";
+String button_7_answer_text = "YES";
+String button_8_answer_text = "ASK AGAIN LATER";
+String button_9_answer_text = "WHO KNOWS?";
+//
+float button_cords_x, button_cords_y;
+//
+boolean start_again = true;
 
 void setup() {
   fullScreen();
@@ -43,65 +49,95 @@ void setup() {
 }
 
 void draw() {
+  if (start_again == true) {}
   buttons();
   lines();
   points();
-  button_words_1();
+  button_words();
+  start_again = false;
+
   if (button_1_pressed == true) {
-    button_1_answer();
+    answer_selector();
+    button_1_pressed = false;
   }
   if (button_2_pressed == true) {
-    button_2_answer();
+    answer_selector();
+    button_2_pressed = false;
   }
   if (button_3_pressed == true) {
-    button_3_answer();
+    answer_selector();
+    button_3_pressed = false;
   }
   if (button_4_pressed == true) {
-    button_4_answer();
+    answer_selector();
+    button_4_pressed = false;
   }
   if (button_5_pressed == true) {
-    button_5_answer();
+    answer_selector();
+    button_5_pressed = false;
   }
   if (button_6_pressed == true) {
-    button_6_answer();
+    answer_selector();
+    button_6_pressed = false;
   }
   if (button_7_pressed == true) {
-    button_7_answer();
+    answer_selector();
+    button_7_pressed = false;
   }
   if (button_8_pressed == true) {
-    button_8_answer();
+    answer_selector();
+    button_8_pressed = false;
   }
   if (button_9_pressed == true) {
-    button_9_answer();
+    answer_selector();
+    button_9_pressed = false;
   }
 }
 
 void mousePressed() {
   if (mouseX > button_1_x && mouseX < button_1_x + button_width && mouseY > button_1_y && mouseY < button_1_y + button_height) {
     button_1_pressed = true;
+    button_cords_x = button_1_x;
+    button_cords_y = button_1_y;
   }
   if (mouseX > button_2_x && mouseX < button_2_x + button_width && mouseY > button_2_y && mouseY < button_2_y + button_height) {
     button_2_pressed = true;
+    button_cords_x = button_2_x;
+    button_cords_y = button_2_y;
   }
   if (mouseX > button_3_x && mouseX < button_3_x + button_width && mouseY > button_3_y && mouseY < button_3_y + button_height) {
     button_3_pressed = true;
+    button_cords_x = button_3_x;
+    button_cords_y = button_3_y;
   }
   if (mouseX > button_4_x && mouseX < button_4_x + button_width && mouseY > button_4_y && mouseY < button_4_y + button_height) {
     button_4_pressed = true;
+    button_cords_x = button_4_x;
+    button_cords_y = button_4_y;
   }
   if (mouseX > button_5_x && mouseX < button_5_x + button_width && mouseY > button_5_y && mouseY < button_5_y + button_height) {
     button_5_pressed = true;
+    button_cords_x = button_5_x;
+    button_cords_y = button_5_y;
   }
   if (mouseX > button_6_x && mouseX < button_6_x + button_width && mouseY > button_6_y && mouseY < button_6_y + button_height) {
     button_6_pressed = true;
+    button_cords_x = button_6_x;
+    button_cords_y = button_6_y;
   }
   if (mouseX > button_7_x && mouseX < button_7_x + button_width && mouseY > button_7_y && mouseY < button_7_y + button_height) {
     button_7_pressed = true;
+    button_cords_x = button_7_x;
+    button_cords_y = button_7_y;
   }
   if (mouseX > button_8_x && mouseX < button_8_x + button_width && mouseY > button_8_y && mouseY < button_8_y + button_height) {
     button_8_pressed = true;
+    button_cords_x = button_8_x;
+    button_cords_y = button_8_y;
   }
   if (mouseX > button_9_x && mouseX < button_9_x + button_width && mouseY > button_9_y && mouseY < button_9_y + button_height) {
     button_9_pressed = true;
+    button_cords_x = button_9_x;
+    button_cords_y = button_9_y;
   }
 }
