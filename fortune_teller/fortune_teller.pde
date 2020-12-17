@@ -57,6 +57,19 @@ boolean start_again_1 = false;
 boolean start_again_2 = false;
 boolean next = false;
 boolean next_1 = false;
+//
+PImage pic_1;
+PImage pic_2;
+//
+float image1StartWidth, image1StartHeight, image1Width, image1Height;
+float image2StartWidth, image2StartHeight, image2Width, image2Height;
+//
+float pic_dig;
+//
+float image1WidthRatio;
+float image1HeightRatio;
+float image2WidthRatio;
+float image2HeightRatio;
 void setup() {
   fullScreen();
   population();
@@ -81,15 +94,15 @@ void draw() {
     text(button_2_start_text, button_start_left_x, button_start_left_y, button_start_width, button_start_height);
   }
   if (start_again == true) {
-    buttons();
-    lines();
-    points();
     if (start_again_1 == true) {
       button_1_words();
       start_again = false;
       next_1 = true;
     }
     if (start_again_2 == true) {
+      buttons();
+      lines();
+      points();
       button_2_words();
       start_again = false;
       next = true;
@@ -134,8 +147,22 @@ void draw() {
     }
   }
   if (next_1 == true) {
+    fill(white);
+    rect(start_x, start_y, start_width, start_height);
+    button_1_words();
+    
     if (button_8_pressed == true) {
-      answer_1_selector();
+      pic_dig = random(1, 3);
+      if (pic_dig >=1) {
+        if (pic_dig < 2) {
+          image(pic_1, image1StartWidth, image1StartHeight, image1Width, image1Height);
+        }
+      }
+      if (pic_dig >=2) {
+        if (pic_dig <= 3) {
+          image(pic_2, image2StartWidth, image2StartHeight, image2Width, image2Height);
+        }
+      }
       button_8_pressed = false;
     }
   }
@@ -156,7 +183,7 @@ void mousePressed() {
       start_again_2 = true;
     }
   }
-  if (choice_1 == true && choice_2 == false && next == true) {
+  if (choice_1 == true && choice_2 == false && next_1 == true) {
     choice_1_mouse();
   }
   if (choice_2 == true && choice_1 == false && next == true) {
