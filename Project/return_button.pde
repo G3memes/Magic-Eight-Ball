@@ -12,6 +12,6 @@ void return_2_button() {
   rect(return_2_x, return_2_y, return_2_width, return_2_height);
   fill(grey);
   textAlign(CENTER, CENTER);
-  textFont(button_font, 25);
+  textFont(button_font, 10);
   text(return_text, return_2_x, return_2_y, return_2_width, return_2_height);
 }
