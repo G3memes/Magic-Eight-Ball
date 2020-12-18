@@ -56,4 +56,14 @@ void population() {
   image2Height = displayHeight*1/3;
   image2StartWidth =  (displayWidth*1/2)-image2Width/2;
   image2StartHeight = displayHeight*1/10;
+  //
+  return_x = displayWidth*6/7;
+  return_y = displayHeight*1/20;
+  return_width = displayWidth*1/9;
+  return_height = displayHeight*1/13;
+  //
+  return_2_x = displayWidth*12/13;
+  return_2_y = displayHeight*1/30;
+  return_2_width = displayWidth*1/15;
+  return_2_height = displayHeight*1/15;
 }

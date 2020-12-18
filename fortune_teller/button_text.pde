@@ -5,12 +5,8 @@ void button_1_words() {
   textAlign(CENTER, CENTER);
   textFont(button_font, 100);
   text(button_8_text, button_8_x, button_8_y, button_width, button_height);
-
 }
 
-//
-//
-//
 //
 //
 

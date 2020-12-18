@@ -47,6 +47,8 @@ String button_7_answer_text = "YES";
 String button_8_answer_text = "ASK AGAIN LATER";
 String button_9_answer_text = "WHO KNOWS?";
 //
+String return_text = "RETURN";
+//
 float button_cords_x, button_cords_y;
 //
 boolean start_again = false;
@@ -57,6 +59,9 @@ boolean start_again_1 = false;
 boolean start_again_2 = false;
 boolean next = false;
 boolean next_1 = false;
+boolean page_2 = false;
+boolean page_3 = false;
+boolean continue_1 = false;
 //
 PImage pic_1;
 PImage pic_2;
@@ -71,6 +76,7 @@ float image1HeightRatio;
 float image2WidthRatio;
 float image2HeightRatio;
 float return_x, return_y, return_width, return_height;
+float return_2_x, return_2_y, return_2_width, return_2_height;
 //
 void setup() {
   fullScreen();
@@ -101,15 +107,22 @@ void draw() {
       start_again = false;
       start_again_1 = false;
       next_1 = true;
+      page_2 = true;
+      choice_1 = true;
+      choice_2 = false;
     }
     if (start_again_2 == true) {
       buttons();
       lines();
       points();
       button_2_words();
-      start_again_2 = false;
+      return_2_button();
+      page_3 = true;
       start_again = false;
       next = true;
+      start_again_2 = false;
+      choice_1  = false;
+      choice_2 = true;
     }
   }
   if (next == true) {
@@ -153,15 +166,14 @@ void draw() {
   if (next_1 == true) {
     fill(white);
     rect(start_x, start_y, start_width, start_height);
+    return_button();
     button_1_words();
-    
     if (button_8_pressed == true) {
       pic_dig = random(1, 3);
       if (pic_dig >=1) {
         if (pic_dig < 2) {
           image(pic_1, image1StartWidth, image1StartHeight, image1Width, image1Height);
           next_1 = false;
-          
         }
       }
       if (pic_dig >=2) {
@@ -178,22 +190,40 @@ void draw() {
 void mousePressed() {
   if (start_screen == true) {
     if (mouseX > button_start_left_x && mouseX < button_start_left_x + button_start_width && mouseY > button_start_left_y && mouseY < button_start_left_y + button_start_height) {
-      choice_1 = true;
       start_screen = false;
       start_again = true;
       start_again_1 = true;
+      page_2 = true;
     }
     if (mouseX > button_start_right_x && mouseX < button_start_right_x + button_start_width && mouseY > button_start_right_y && mouseY < button_start_right_y + button_start_height) {
-      choice_2 = true;
       start_screen = false;
       start_again = true;
       start_again_2 = true;
+      page_3 = true;
     }
   }
-  if (choice_1 == true && choice_2 == false && next_1 == true) {
+  if (choice_1 == true && choice_2 == false) {
     choice_1_mouse();
+    next_1 = true;
+    choice_1 = false;
   }
-  if (choice_2 == true && choice_1 == false && next == true) {
+  if (choice_2 == true && choice_1 == false) {
     choice_2_mouse();
+    next = true;
+    choice_2 = false;
+  }
+  if (page_2 == true) {
+    if (mouseX > return_x && mouseX < return_x + return_width && mouseY > return_y && mouseY < return_y + return_height) {
+      start_screen = true;
+      next_1 = false;
+      start_again = true;
+    }
+  }
+  if (page_3 == true) {
+    if (mouseX > return_2_x && mouseX < return_2_x + return_2_width && mouseY > return_2_y && mouseY < return_2_y + return_2_height) {
+      start_screen = true;
+      next = false;
+      start_again = true;
+    }
   }
 }

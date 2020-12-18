@@ -6,9 +6,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_1_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -18,9 +19,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_2_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -31,9 +33,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_3_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -44,9 +47,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_4_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -57,9 +61,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_5_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -70,9 +75,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_6_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -83,9 +89,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_7_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -95,9 +102,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_8_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
@@ -107,9 +115,10 @@ void answer_1_selector() {
       rect(button_cords_x, button_cords_y, button_width, button_height);
       lines();
       points();
+      return_2_button();
       fill(grey);
       textAlign(CENTER, CENTER);
-      textFont(button_font, 100);
+      textFont(button_font, 60);
       text(button_9_answer_text, button_cords_x, button_cords_y, button_width, button_height);
     }
   }
