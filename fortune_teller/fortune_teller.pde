@@ -101,6 +101,7 @@ void draw() {
     textFont(button_font, 100);
     text(button_2_start_text, button_start_left_x, button_start_left_y, button_start_width, button_start_height);
   }
+  //if (mouseX
   if (start_again == true) {
     if (start_again_1 == true) {
       button_1_words();
@@ -126,6 +127,9 @@ void draw() {
     }
   }
   if (next == true) {
+    if (continue_1 == true) {
+      hover();
+    }
     if (button_1_pressed == true) {
       answer_1_selector();
       button_1_pressed = false;
@@ -200,6 +204,7 @@ void mousePressed() {
       start_again = true;
       start_again_2 = true;
       page_3 = true;
+      continue_1 = true;
     }
   }
   if (choice_1 == true && choice_2 == false) {
