@@ -39,7 +39,7 @@ float  button_start_right_x, button_start_right_y, button_start_left_x, button_s
 //
 String button_1_answer_text = "NO";
 String button_2_answer_text = "FOR SURE";
-String button_3_answer_text = "MY SOURCES SAY NO";
+String button_3_answer_text = "I THINK NOT";
 String button_4_answer_text = "KIND OF";
 String button_5_answer_text = "DEFINITELY NOT";
 String button_6_answer_text = "MAYBE, MAYBE NOT";
@@ -70,6 +70,7 @@ float image1WidthRatio;
 float image1HeightRatio;
 float image2WidthRatio;
 float image2HeightRatio;
+float return_x, return_y, return_width, return_height;
 //
 void setup() {
   fullScreen();
@@ -98,6 +99,7 @@ void draw() {
     if (start_again_1 == true) {
       button_1_words();
       start_again = false;
+      start_again_1 = false;
       next_1 = true;
     }
     if (start_again_2 == true) {
@@ -105,6 +107,7 @@ void draw() {
       lines();
       points();
       button_2_words();
+      start_again_2 = false;
       start_again = false;
       next = true;
     }
@@ -157,11 +160,14 @@ void draw() {
       if (pic_dig >=1) {
         if (pic_dig < 2) {
           image(pic_1, image1StartWidth, image1StartHeight, image1Width, image1Height);
+          next_1 = false;
+          
         }
       }
       if (pic_dig >=2) {
         if (pic_dig <= 3) {
           image(pic_2, image2StartWidth, image2StartHeight, image2Width, image2Height);
+          next_1 = false;
         }
       }
       button_8_pressed = false;

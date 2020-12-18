@@ -43,17 +43,17 @@ void population() {
   pic_1 = loadImage("face_1.jpg"); //Dimensions: 512 Width, 512 Height
   pic_2 = loadImage("face_2.png"); //Dimensions: 2048 Width, 1361 Height
   //
-  image1WidthRatio = 200/512.0;
+  image1WidthRatio = 512/512.0;
   image1HeightRatio = (512.0/512.0)*image2WidthRatio;
-  image1Width = displayWidth*image2WidthRatio;
-  image1Height = displayHeight*image2HeightRatio;
-  image1StartWidth = displayWidth*1/4;
+  image1Width = displayWidth*1/5;
+  image1Height = displayHeight*1/3;
+  image1StartWidth = (displayWidth*1/2)-image1Width/2;
   image1StartHeight = displayHeight*1/10;
   //
   image2WidthRatio = 225.0/225.0;
   image2HeightRatio = (225.0/225.0)*image2WidthRatio;
-  image2Width = displayWidth*image2WidthRatio;
-  image2Height = displayHeight*image2HeightRatio;
-  image2StartWidth = displayWidth*1/4;
+  image2Width = displayWidth*1/5;
+  image2Height = displayHeight*1/3;
+  image2StartWidth =  (displayWidth*1/2)-image2Width/2;
   image2StartHeight = displayHeight*1/10;
 }
