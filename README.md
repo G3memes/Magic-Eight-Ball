@@ -1,2 +1,2 @@
-# 3-by-3-Assignment-
-3 by 3 Assignment including random colour with additional text, and images
+# Magic 8 Ball
+Program that includes nine boxes similar to a fortune teller as well as a magic eight ball
